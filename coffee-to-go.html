@@ -24,13 +24,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 90vw;      /* Plenty of side margin to prevent any cutoff */
-            height: 90vh;
+            width: 94vw;
+            height: 94vh;
         }
         .shop-name {
-            font-size: 11vw;  /* Slightly larger for better visibility */
+            font-size: 10vw;
             color: #ffff00;
-            letter-spacing: 0.8vw;
+            letter-spacing: 0.6vw;
             text-shadow:
                 0 0 3vw #ffff00,
                 0 0 6vw #ffff00,
@@ -38,12 +38,18 @@
                 0 0 12vw #ffff00;
             animation: neon-flicker 3s infinite alternate;
             white-space: nowrap;
+            margin-bottom: 4vh;
         }
-        .main-text {
-            font-size: 22vw;  /* Reduced further to guarantee full visibility of "COFFEE TO GO" */
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .coffee {
+            font-size: 24vw;  /* Larger for "COFFEE" since it's now on its own line */
             color: #ff0000;
             text-transform: uppercase;
-            letter-spacing: 1.2vw; /* Slightly reduced spacing for better fit */
+            letter-spacing: 1vw;
             text-shadow:
                 0 0 3vw #ff0000,
                 0 0 6vw #ff0000,
@@ -52,7 +58,21 @@
                 0 0 15vw #ff0000;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
-            margin-top: 3vh;
+        }
+        .to-go {
+            font-size: 18vw;  /* Slightly smaller for "TO GO" */
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 1vw;
+            text-shadow:
+                0 0 3vw #ff0000,
+                0 0 6vw #ff0000,
+                0 0 9vw #ff0000,
+                0 0 12vw #ff0000,
+                0 0 15vw #ff0000;
+            animation: neon-flicker 2.5s infinite alternate;
+            white-space: nowrap;
+            margin-top: -2vh; /* Pulls it closer to "COFFEE" for tight stacking */
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
@@ -63,7 +83,10 @@
 <body>
     <div class="container">
         <div class="shop-name">The Brown Mug</div>
-        <div class="main-text">Coffee To Go</div>
+        <div class="main-wrapper">
+            <div class="coffee">Coffee</div>
+            <div class="to-go">To Go</div>
+        </div>
     </div>
 </body>
 </html>
