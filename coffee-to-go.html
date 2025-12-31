@@ -24,8 +24,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 94vw;
-            height: 94vh;
+            width: 85vw;      /* More buffer on left/right sides */
+            height: 85vh;     /* More buffer on top/bottom */
         }
         .shop-name {
             font-size: 10vw;
@@ -38,7 +38,7 @@
                 0 0 12vw #ffff00;
             animation: neon-flicker 3s infinite alternate;
             white-space: nowrap;
-            margin-bottom: 4vh;
+            margin-bottom: 6vh; /* Extra space below shop name */
         }
         .main-wrapper {
             display: flex;
@@ -46,7 +46,7 @@
             align-items: center;
         }
         .coffee {
-            font-size: 24vw;  /* Larger for "COFFEE" since it's now on its own line */
+            font-size: 24vw;
             color: #ff0000;
             text-transform: uppercase;
             letter-spacing: 1vw;
@@ -60,7 +60,7 @@
             white-space: nowrap;
         }
         .to-go {
-            font-size: 18vw;  /* Slightly smaller for "TO GO" */
+            font-size: 18vw;
             color: #ff0000;
             text-transform: uppercase;
             letter-spacing: 1vw;
@@ -70,9 +70,9 @@
                 0 0 9vw #ff0000,
                 0 0 12vw #ff0000,
                 0 0 15vw #ff0000;
-            animation: neon-flicker 2.5s infinite alternate;
+            /* No animation = steady glow, no flashing */
             white-space: nowrap;
-            margin-top: -2vh; /* Pulls it closer to "COFFEE" for tight stacking */
+            margin-top: -2vh;
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
