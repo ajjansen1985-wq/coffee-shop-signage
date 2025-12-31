@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Brown Mug - COFFEE TO GO</title>
+    <title>The Brown Mug - OPEN</title>
     <style>
         html, body {
             margin: 0;
@@ -24,69 +24,54 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 85vw;      /* More buffer on left/right sides */
-            height: 85vh;     /* More buffer on top/bottom */
+            width: 85vw;      /* Buffer on sides */
+            height: 85vh;     /* Buffer on top/bottom */
         }
-        .shop-name {
-            font-size: 10vw;
-            color: #ffff00;
-            letter-spacing: 0.6vw;
+        .open-top,
+        .open-bottom {
+            font-size: 14vw;
+            color: #00ff00;   /* Bright green for high visibility */
+            text-transform: uppercase;
+            letter-spacing: 1vw;
             text-shadow:
-                0 0 3vw #ffff00,
-                0 0 6vw #ffff00,
-                0 0 9vw #ffff00,
-                0 0 12vw #ffff00;
-            animation: neon-flicker 3s infinite alternate;
+                0 0 3vw #00ff00,
+                0 0 6vw #00ff00,
+                0 0 9vw #00ff00,
+                0 0 12vw #00ff00,
+                0 0 15vw #00ff00;
+            animation: neon-flicker 2s infinite alternate; /* Flashing glow */
             white-space: nowrap;
-            margin-bottom: 6vh; /* Extra space below shop name */
         }
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .open-top {
+            margin-bottom: 4vh;
+        }
+        .open-bottom {
+            margin-top: 4vh;
         }
         .coffee {
-            font-size: 24vw;
-            color: #ff0000;
+            font-size: 28vw;  /* Large central word */
+            color: #ff0000;   /* Bright red */
             text-transform: uppercase;
-            letter-spacing: 1vw;
+            letter-spacing: 1.2vw;
             text-shadow:
                 0 0 3vw #ff0000,
                 0 0 6vw #ff0000,
                 0 0 9vw #ff0000,
                 0 0 12vw #ff0000,
                 0 0 15vw #ff0000;
-            animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
-        }
-        .to-go {
-            font-size: 18vw;
-            color: #ff0000;
-            text-transform: uppercase;
-            letter-spacing: 1vw;
-            text-shadow:
-                0 0 3vw #ff0000,
-                0 0 6vw #ff0000,
-                0 0 9vw #ff0000,
-                0 0 12vw #ff0000,
-                0 0 15vw #ff0000;
-            /* No animation = steady glow, no flashing */
-            white-space: nowrap;
-            margin-top: -2vh;
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            50% { opacity: 0.7; } /* Stronger flash for attention */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="shop-name">The Brown Mug</div>
-        <div class="main-wrapper">
-            <div class="coffee">Coffee</div>
-            <div class="to-go">To Go</div>
-        </div>
+        <div class="open-top">Open</div>
+        <div class="coffee">Coffee</div>
+        <div class="open-bottom">Open</div>
     </div>
 </body>
 </html>
