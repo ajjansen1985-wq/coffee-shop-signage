@@ -18,7 +18,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative; /* Needed for absolute-positioned corners */
         }
         .container {
             display: flex;
@@ -27,7 +26,8 @@
             justify-content: center;
             width: 1632px;
             height: 918px;
-            z-index: 10; /* Ensures text stays on top */
+            position: relative; /* Makes .coffee the reference for absolute children */
+            z-index: 10;
         }
         .open-top,
         .open-bottom {
@@ -63,13 +63,14 @@
                 0 0 288px #ff0000;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
+            position: relative; /* Establishes positioning context for cups */
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
 
-        /* Corner coffee cups with steam */
+        /* Corner cups – positioned relative to center of "COFFEE" */
         .corner-cup {
             position: absolute;
             font-size: 180px;
@@ -83,26 +84,12 @@
             display: block;
             margin-bottom: -40px;
         }
-        /* Top-left */
-        .top-left {
-            top: 100px;
-            left: 100px;
-        }
-        /* Top-right */
-        .top-right {
-            top: 100px;
-            right: 100px;
-        }
-        /* Bottom-left */
-        .bottom-left {
-            bottom: 100px;
-            left: 100px;
-        }
-        /* Bottom-right */
-        .bottom-right {
-            bottom: 100px;
-            right: 100px;
-        }
+        /* Offsets from the exact center of "COFFEE" */
+        .top-left-cup     { top: -300px; left: -600px; }   /* Up and left */
+        .top-right-cup    { top: -300px; left:  400px; }   /* Up and right */
+        .bottom-left-cup  { top:  200px; left: -600px; }   /* Down and left */
+        .bottom-right-cup { top:  200px; left:  400px; }   /* Down and right */
+
         @keyframes float {
             0%   { transform: translateY(0); }
             50%  { transform: translateY(-30px); }
@@ -111,28 +98,30 @@
     </style>
 </head>
 <body>
-    <!-- Corner cups with steam -->
-    <div class="corner-cup top-left">
-        <div class="steam">〰〰〰〰</div>
-        ☕
-    </div>
-    <div class="corner-cup top-right">
-        <div class="steam">〰〰〰〰</div>
-        ☕
-    </div>
-    <div class="corner-cup bottom-left">
-        <div class="steam">〰〰〰〰</div>
-        ☕
-    </div>
-    <div class="corner-cup bottom-right">
-        <div class="steam">〰〰〰〰</div>
-        ☕
-    </div>
-
-    <!-- Main centered text -->
+    <!-- Main centered text – .coffee is the reference point -->
     <div class="container">
         <div class="open-top">Open</div>
-        <div class="coffee">Coffee</div>
+        <div class="coffee">
+            Coffee
+
+            <!-- Corner cups positioned relative to center of this div -->
+            <div class="corner-cup top-left-cup">
+                <div class="steam">〰〰〰〰</div>
+                ☕
+            </div>
+            <div class="corner-cup top-right-cup">
+                <div class="steam">〰〰〰〰</div>
+                ☕
+            </div>
+            <div class="corner-cup bottom-left-cup">
+                <div class="steam">〰〰〰〰</div>
+                ☕
+            </div>
+            <div class="corner-cup bottom-right-cup">
+                <div class="steam">〰〰〰〰</div>
+                ☕
+            </div>
+        </div>
         <div class="open-bottom">Open</div>
     </div>
 </body>
