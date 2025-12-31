@@ -18,41 +18,43 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative; /* Needed for absolute-positioned corners */
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 1632px;      /* 1920 × 0.85 = 1632px buffer on sides */
-            height: 918px;      /* 1080 × 0.85 = 918px buffer on top/bottom */
+            width: 1632px;
+            height: 918px;
+            z-index: 10; /* Ensures text stays on top */
         }
         .open-top,
         .open-bottom {
-            font-size: 300px;   /* 14vw ≈ 269px on 1920px wide screen */
+            font-size: 300px;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: normal; /* 1vw ≈ 19px */
+            letter-spacing: normal;
             text-shadow:
-                0 0 58px #00ff00,   /* 3vw ≈ 58px */
-                0 0 115px #00ff00,  /* 6vw ≈ 115px */
-                0 0 173px #00ff00,  /* 9vw ≈ 173px */
-                0 0 230px #00ff00,  /* 12vw ≈ 230px */
-                0 0 288px #00ff00;  /* 15vw ≈ 288px */
+                0 0 58px #00ff00,
+                0 0 115px #00ff00,
+                0 0 173px #00ff00,
+                0 0 230px #00ff00,
+                0 0 288px #00ff00;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
         .open-top {
-            margin-bottom: -100px; /* 7.5vh ≈ 81px (adjusted for visual balance) */
+            margin-bottom: -100px;
         }
         .open-bottom {
             margin-top: -100px;
         }
         .coffee {
-            font-size: 450px;   /* 28vw ≈ 538px */
+            font-size: 450px;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: -20px; /* 1.2vw ≈ 23px */
+            letter-spacing: -20px;
             text-shadow:
                 0 0 58px #ff0000,
                 0 0 115px #ff0000,
@@ -66,9 +68,68 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
+
+        /* Corner coffee cups with steam */
+        .corner-cup {
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.8;
+            z-index: 5;
+        }
+        .steam {
+            font-size: 80px;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+            display: block;
+            margin-bottom: -40px;
+        }
+        /* Top-left */
+        .top-left {
+            top: 60px;
+            left: 60px;
+        }
+        /* Top-right */
+        .top-right {
+            top: 60px;
+            right: 60px;
+        }
+        /* Bottom-left */
+        .bottom-left {
+            bottom: 60px;
+            left: 60px;
+        }
+        /* Bottom-right */
+        .bottom-right {
+            bottom: 60px;
+            right: 60px;
+        }
+        @keyframes float {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
+    <!-- Corner cups with steam -->
+    <div class="corner-cup top-left">
+        <div class="steam">〰〰〰〰</div>
+        ☕
+    </div>
+    <div class="corner-cup top-right">
+        <div class="steam">〰〰〰〰</div>
+        ☕
+    </div>
+    <div class="corner-cup bottom-left">
+        <div class="steam">〰〰〰〰</div>
+        ☕
+    </div>
+    <div class="corner-cup bottom-right">
+        <div class="steam">〰〰〰〰</div>
+        ☕
+    </div>
+
+    <!-- Main centered text -->
     <div class="container">
         <div class="open-top">Open</div>
         <div class="coffee">Coffee</div>
