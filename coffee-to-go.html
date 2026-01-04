@@ -27,41 +27,41 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 1632px;
-            height: 918px;
+            width: 90vw;      /* Responsive buffer */
+            height: 90vh;
         }
         .open-top,
         .open-bottom {
-            font-size: 300px;
+            font-size: 15vw;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: normal;
+            letter-spacing: 0.5vw;
             text-shadow:
-                0 0 58px #00ff00,
-                0 0 115px #00ff00,
-                0 0 173px #00ff00,
-                0 0 230px #00ff00,
-                0 0 288px #00ff00;
+                0 0 3vw #00ff00,
+                0 0 6vw #00ff00,
+                0 0 9vw #00ff00,
+                0 0 12vw #00ff00,
+                0 0 15vw #00ff00;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
         .open-top {
-            margin-bottom: -100px;
+            margin-bottom: -5vh;
         }
         .open-bottom {
-            margin-top: -100px;
+            margin-top: -5vh;
         }
         .coffee {
-            font-size: 450px;
+            font-size: 23vw;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: normal;
+            letter-spacing: -1vw;
             text-shadow:
-                0 0 58px #ff0000,
-                0 0 115px #ff0000,
-                0 0 173px #ff0000,
-                0 0 230px #ff0000,
-                0 0 288px #ff0000;
+                0 0 3vw #ff0000,
+                0 0 6vw #ff0000,
+                0 0 9vw #ff0000,
+                0 0 12vw #ff0000,
+                0 0 15vw #ff0000;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
@@ -70,26 +70,26 @@
             50% { opacity: 0.7; }
         }
 
-        /* Coffee cups – positioned relative to screen center */
+        /* Responsive coffee cups */
         .corner-cup {
             position: absolute;
-            font-size: 240px;
+            font-size: 12vw;      /* Scales with screen width */
             opacity: 1;
             color: #ffffff;
             text-shadow:
-                0 0 20px #ffaa00,
-                0 0 40px #ffaa00;
-            /* Start from exact screen center */
+                0 0 2vw #ffaa00,
+                0 0 4vw #ffaa00;
+            /* Base position: exact screen center */
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
         }
 
-        /* Offsets from screen center */
-        .top-left-cup     { transform: translate(calc(-50% - 480px), calc(-50% - 300px)); }
-        .top-right-cup    { transform: translate(calc(-50% + 480px), calc(-50% - 300px)); }
-        .bottom-left-cup  { transform: translate(calc(-50% - 480px), calc(-50% + 300px)); }
-        .bottom-right-cup { transform: translate(calc(-50% + 480px), calc(-50% + 300px)); }
+        /* Responsive offsets from screen center */
+        .top-left-cup     { transform: translate(calc(-50% - 25vw), calc(-50% - 18vh)); }
+        .top-right-cup    { transform: translate(calc(-50% + 25vw), calc(-50% - 18vh)); }
+        .bottom-left-cup  { transform: translate(calc(-50% - 25vw), calc(-50% + 18vh)); }
+        .bottom-right-cup { transform: translate(calc(-50% + 25vw), calc(-50% + 18vh)); }
     </style>
 </head>
 <body>
@@ -100,7 +100,7 @@
         <div class="open-bottom">Open</div>
     </div>
 
-    <!-- Cups positioned relative to the direct center of the screen -->
+    <!-- Cups positioned relative to screen center (fully responsive) -->
     <div class="corner-cup top-left-cup">☕</div>
     <div class="corner-cup top-right-cup">☕</div>
     <div class="corner-cup bottom-left-cup">☕</div>
