@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            position: relative; /* Reference for absolute cups */
         }
         .container {
             display: flex;
@@ -29,7 +29,6 @@
             justify-content: center;
             width: 1632px;
             height: 918px;
-            position: relative;
         }
         .open-top,
         .open-bottom {
@@ -45,7 +44,6 @@
                 0 0 288px #00ff00;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
-            position: relative;
         }
         .open-top {
             margin-bottom: -100px;
@@ -72,7 +70,7 @@
             50% { opacity: 0.7; }
         }
 
-        /* Coffee cups – bigger and brighter, no steam */
+        /* Coffee cups – positioned relative to screen center */
         .corner-cup {
             position: absolute;
             font-size: 240px;
@@ -81,44 +79,31 @@
             text-shadow:
                 0 0 20px #ffaa00,
                 0 0 40px #ffaa00;
+            /* Start from exact screen center */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        /* Symmetric 5-inch offset (±480px) from the center of each OPEN */
-        .left-cup   { left: -480px; }
-        .right-cup  { left:  480px; }
-
-        /* Vertically centered with respective OPEN */
-        .top-cups    { top: 50%; transform: translateY(-50%); }
-        .bottom-cups { top: 50%; transform: translateY(-50%); }
+        /* Offsets from screen center */
+        .top-left-cup     { transform: translate(calc(-50% - 480px), calc(-50% - 300px)); }
+        .top-right-cup    { transform: translate(calc(-50% + 480px), calc(-50% - 300px)); }
+        .bottom-left-cup  { transform: translate(calc(-50% - 480px), calc(-50% + 300px)); }
+        .bottom-right-cup { transform: translate(calc(-50% + 480px), calc(-50% + 300px)); }
     </style>
 </head>
 <body>
+    <!-- Main centered text -->
     <div class="container">
-        <div class="open-top">
-            Open
-            <!-- Top-left cup -->
-            <div class="corner-cup top-cups left-cup">
-                ☕
-            </div>
-            <!-- Top-right cup -->
-            <div class="corner-cup top-cups right-cup">
-                ☕
-            </div>
-        </div>
-
+        <div class="open-top">Open</div>
         <div class="coffee">Coffee</div>
-
-        <div class="open-bottom">
-            Open
-            <!-- Bottom-left cup -->
-            <div class="corner-cup bottom-cups left-cup">
-                ☕
-            </div>
-            <!-- Bottom-right cup -->
-            <div class="corner-cup bottom-cups right-cup">
-                ☕
-            </div>
-        </div>
+        <div class="open-bottom">Open</div>
     </div>
+
+    <!-- Cups positioned relative to the direct center of the screen -->
+    <div class="corner-cup top-left-cup">☕</div>
+    <div class="corner-cup top-right-cup">☕</div>
+    <div class="corner-cup bottom-left-cup">☕</div>
+    <div class="corner-cup bottom-right-cup">☕</div>
 </body>
 </html>
