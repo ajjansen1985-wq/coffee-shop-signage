@@ -22,40 +22,40 @@
             justify-content: center;
         }
 
-        /* 3×3 CSS Grid – the main structure */
+        /* 3×3 CSS Grid – increased vertical space for better height fit */
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;  /* Left | Center (wider) | Right */
-            grid-template-rows: 1fr 2fr 1fr;      /* Top | Middle (taller) | Bottom */
-            width: 90vw;
-            height: 90vh;
-            gap: 2vw;                            /* Space between grid cells */
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1.2fr 2fr 1.2fr;  /* Increased top/bottom rows for more breathing room */
+            width: 94vw;                         /* Slightly larger width to use more screen */
+            height: 94vh;                         /* Slightly larger height to reduce vertical compression */
+            gap: 2vw;
         }
 
-        /* Main text items – placed in grid cells */
+        /* Main text items */
         .open-top {
-            grid-column: 2 / 3;   /* Center column */
-            grid-row: 1 / 2;      /* Top row */
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
             justify-self: center;
-            align-self: end;      /* Align to bottom of top row */
+            align-self: end;
         }
         .coffee {
-            grid-column: 2 / 3;   /* Center column */
-            grid-row: 2 / 3;      /* Middle row */
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
             justify-self: center;
-            align-self: center;   /* Perfectly centered in middle cell */
+            align-self: center;
         }
         .open-bottom {
-            grid-column: 2 / 3;   /* Center column */
-            grid-row: 3 / 4;      /* Bottom row */
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
             justify-self: center;
-            align-self: start;    /* Align to top of bottom row */
+            align-self: start;
         }
 
-        /* Styling for the text */
+        /* Text styling – slightly increased font sizes for better presence */
         .open-top,
         .open-bottom {
-            font-size: 15vw;
+            font-size: 16vw;     /* Slightly larger */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -69,7 +69,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 23vw;
+            font-size: 24vw;     /* Slightly larger */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: -1vw;
@@ -87,9 +87,9 @@
             50% { opacity: 0.7; }
         }
 
-        /* Coffee cups in the four "corner" cells using Grid */
+        /* Corner cups – slightly larger */
         .corner-cup {
-            font-size: 12vw;
+            font-size: 13vw;
             opacity: 1;
             color: #ffffff;
             text-shadow:
@@ -105,15 +105,12 @@
     </style>
 </head>
 <body>
-    <!-- 3×3 Grid layout -->
     <div class="grid-container">
-        <!-- Corner cups -->
         <div class="corner-cup top-left-cup">☕</div>
         <div class="corner-cup top-right-cup">☕</div>
         <div class="corner-cup bottom-left-cup">☕</div>
         <div class="corner-cup bottom-right-cup">☕</div>
 
-        <!-- Main centered text -->
         <div class="open-top">Open</div>
         <div class="coffee">Coffee</div>
         <div class="open-bottom">Open</div>
