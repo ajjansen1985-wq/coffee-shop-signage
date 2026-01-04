@@ -22,17 +22,17 @@
             justify-content: center;
         }
 
-        /* 3×3 CSS Grid – increased vertical space for better height fit */
+        /* 3×3 CSS Grid – reduced height to prevent bottom cutoff */
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1.2fr 2fr 1.2fr;  /* Increased top/bottom rows for more breathing room */
-            width: 94vw;                         /* Slightly larger width to use more screen */
-            height: 94vh;                         /* Slightly larger height to reduce vertical compression */
+            grid-template-rows: 1fr 2fr 1fr;  /* Balanced rows */
+            width: 94vw;
+            height: 88vh;                         /* Reduced from 94vh to add more top/bottom buffer */
             gap: 2vw;
         }
 
-        /* Main text items */
+        /* Main text items – slightly smaller to fit safely */
         .open-top {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
@@ -52,10 +52,10 @@
             align-self: start;
         }
 
-        /* Text styling – slightly increased font sizes for better presence */
+        /* Text styling – reduced font sizes for better vertical fit */
         .open-top,
         .open-bottom {
-            font-size: 16vw;     /* Slightly larger */
+            font-size: 14vw;     /* Reduced from 16vw */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -69,7 +69,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 24vw;     /* Slightly larger */
+            font-size: 22vw;     /* Reduced from 24vw */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: -1vw;
@@ -87,9 +87,9 @@
             50% { opacity: 0.7; }
         }
 
-        /* Corner cups – slightly larger */
+        /* Corner cups – reduced size */
         .corner-cup {
-            font-size: 13vw;
+            font-size: 12vw;     /* Reduced from 13vw */
             opacity: 1;
             color: #ffffff;
             text-shadow:
