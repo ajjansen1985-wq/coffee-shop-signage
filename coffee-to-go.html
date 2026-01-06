@@ -15,21 +15,22 @@
             background: #000000;
             overflow: hidden;
             font-family: 'Bangers', 'Arial Black', 'Impact', sans-serif;
-        }
-        body {
+            /* Ensure full height and centering */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* 3×3 CSS Grid */
+        /* 3×3 CSS Grid – now perfectly centered in the window */
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1fr 2.5fr 1fr;  /* Increased middle row to give COFFEE more space */
+            grid-template-rows: 1fr 2.5fr 1fr;
             width: 94vw;
             height: 88vh;
             gap: 2vw;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         /* Main text items */
@@ -52,7 +53,7 @@
             align-self: start;
         }
 
-        /* Text styling – COFFEE much larger to dominate the center */
+        /* Text styling */
         .open-top,
         .open-bottom {
             font-size: 14vw;
@@ -69,7 +70,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 28vw;  /* Significantly increased to take more of the center */
+            font-size: 28vw;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
@@ -87,7 +88,7 @@
             50% { opacity: 0.7; }
         }
 
-        /* Corner cups – pushed farther toward corners */
+        /* Corner cups */
         .corner-cup {
             font-size: 12vw;
             opacity: 1;
