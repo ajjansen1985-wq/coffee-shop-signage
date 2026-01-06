@@ -21,11 +21,11 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;   /* Wider center */
-            grid-template-rows: 1fr 3fr 1fr;       /* Taller middle row */
-            width: 100vw;                          /* Full width */
-            height: 100vh;                         /* Full height */
-            gap: 0;                                /* No gap – elements touch edges */
+            grid-template-columns: 1fr 3fr 1fr;   /* Wide center column */
+            grid-template-rows: 1fr 2fr 1fr;       /* Controlled middle row height */
+            width: 98vw;
+            height: 98vh;                          /* Safe height to avoid cutoff */
+            gap: 1vw;
         }
 
         .open-top {
@@ -34,12 +34,15 @@
             justify-self: center;
             align-self: end;
         }
+
+        /* COFFEE spans all 3 columns but stays in middle row */
         .coffee {
-            grid-column: 1 / 4;   /* This makes COFFEE span all three columns */
-            grid-row: 2 / 3;
+            grid-column: 1 / 4;        /* Full width across all columns */
+            grid-row: 2 / 3;           /* Stays in middle row only */
             justify-self: center;
             align-self: center;
         }
+
         .open-bottom {
             grid-column: 2 / 3;
             grid-row: 3 / 4;
@@ -47,10 +50,9 @@
             align-self: start;
         }
 
-        /* Very large fonts to fill the screen aggressively */
         .open-top,
         .open-bottom {
-            font-size: 18vh;       /* Huge – fills top/bottom rows */
+            font-size: 14vh;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -59,7 +61,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 40vw;       /* Massive – dominates center */
+            font-size: 32vh;           /* Large but height-controlled (vh) */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
@@ -72,7 +74,6 @@
             50% { opacity: 0.7; }
         }
 
-        /* Large corner cups pushed right to the edges */
         .corner-cup {
             font-size: 16vh;
             opacity: 1;
