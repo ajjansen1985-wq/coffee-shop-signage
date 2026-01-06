@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Google Font: Bangers (comic/neon style) -->
+    <!-- Google Font: Bangers -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <title>The Brown Mug - OPEN</title>
     <style>
@@ -18,93 +18,110 @@
         }
         body {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        /* Big, bold text */
-        .open {
+        /* 3×3 CSS Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            width: 94vw;
+            height: 88vh;  /* Safe height to avoid cutoff */
+            gap: 2vw;
+        }
+
+        /* Main text items */
+        .open-top {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            justify-self: center;
+            align-self: end;
+        }
+        .coffee {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            justify-self: center;
+            align-self: center;
+        }
+        .open-bottom {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            justify-self: center;
+            align-self: start;
+        }
+
+        /* Text styling */
+        .open-top,
+        .open-bottom {
+            font-size: 14vw;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5vw;
+            text-shadow:
+                0 0 3vw #00ff00,
+                0 0 6vw #00ff00,
+                0 0 9vw #00ff00,
+                0 0 12vw #00ff00,
+                0 0 15vw #00ff00;
+            animation: neon-flicker 2s infinite alternate;
+            white-space: nowrap;
+        }
+        .coffee {
             font-size: 22vw;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 1vw;
+            letter-spacing: normal;  /* Changed to normal as requested */
             text-shadow:
-                0 0 4vw #00ff00,
-                0 0 8vw #00ff00,
-                0 0 12vw #00ff00,
-                0 0 16vw #00ff00,
-                0 0 20vw #00ff00;
-            animation: flicker 2s infinite alternate;
-            margin: 2vh 0;
-        }
-        .coffee {
-            font-size: 28vw;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: -1vw;
-            text-shadow:
-                0 0 4vw #ff0000,
-                0 0 8vw #ff0000,
+                0 0 3vw #ff0000,
+                0 0 6vw #ff0000,
+                0 0 9vw #ff0000,
                 0 0 12vw #ff0000,
-                0 0 16vw #ff0000,
-                0 0 20vw #ff0000;
-            animation: flicker 2s infinite alternate;
+                0 0 15vw #ff0000;
+            animation: neon-flicker 2s infinite alternate;
+            white-space: nowrap;
         }
-
-        @keyframes flicker {
+        @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
 
-        /* Large corner coffee cups with steam */
+        /* Coffee cups – moved farther toward corners, no steam blocks */
         .corner-cup {
-            position: absolute;
-            font-size: 18vw;
-            opacity: 0.9;
+            font-size: 12vw;
+            opacity: 1;
+            color: #ffffff;
+            text-shadow:
+                0 0 2vw #ffaa00,
+                0 0 4vw #ffaa00;
+            justify-self: center;
+            align-self: center;
         }
-        .steam {
-            font-size: 10vw;
-            opacity: 0.7;
-            animation: float 6s infinite ease-in-out;
-            display: block;
-            margin-bottom: -6vw;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5vw); }
-            100% { transform: translateY(0); }
-        }
+        /* Push cups closer to true corners while staying in their grid cell */
+        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 5vw; margin-top: 5vh; }
+        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 5vw; margin-top: 5vh; }
+        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 5vw; margin-bottom: 5vh; }
+        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 5vw; margin-bottom: 5vh; }
 
-        /* Corner positions */
-        .top-left     { top: 5vh; left: 5vw; }
-        .top-right    { top: 5vh; right: 5vw; }
-        .bottom-left  { bottom: 5vh; left: 5vw; }
-        .bottom-right { bottom: 5vh; right: 5vw; }
+        .top-left-cup     { grid-column: 1; grid-row: 1; }
+        .top-right-cup    { grid-column: 3; grid-row: 1; }
+        .bottom-left-cup  { grid-column: 1; grid-row: 3; }
+        .bottom-right-cup { grid-column: 3; grid-row: 3; }
     </style>
 </head>
 <body>
-    <!-- Corner cups -->
-    <div class="corner-cup top-left">
-        <div class="steam">🌫️🌫️🌫️</div>
-        ☕
-    </div>
-    <div class="corner-cup top-right">
-        <div class="steam">🌫️🌫️🌫️</div>
-        ☕
-    </div>
-    <div class="corner-cup bottom-left">
-        <div class="steam">🌫️🌫️🌫️</div>
-        ☕
-    </div>
-    <div class="corner-cup bottom-right">
-        <div class="steam">🌫️🌫️🌫️</div>
-        ☕
-    </div>
+    <div class="grid-container">
+        <!-- Coffee cups (no steam blocks) -->
+        <div class="corner-cup top-left-cup">☕</div>
+        <div class="corner-cup top-right-cup">☕</div>
+        <div class="corner-cup bottom-left-cup">☕</div>
+        <div class="corner-cup bottom-right-cup">☕</div>
 
-    <!-- Main centered text -->
-    <div class="open">Open</div>
-    <div class="coffee">Coffee</div>
-    <div class="open">Open</div>
+        <!-- Main text -->
+        <div class="open-top">Open</div>
+        <div class="coffee">Coffee</div>
+        <div class="open-bottom">Open</div>
+    </div>
 </body>
 </html>
