@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Removed maximum-scale/user-scalable to allow proper full-screen reflow -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <title>The Brown Mug - OPEN</title>
     <style>
@@ -22,10 +21,10 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 2.5fr 1fr;  /* Wider center column for ultrawide */
-            grid-template-rows: 1fr 2.2fr 1fr;      /* Slightly compressed vertically */
-            width: 96vw;                           /* Use more width */
-            height: 82vh;                          /* Reduced height to avoid cutoff */
+            grid-template-columns: 1fr 2.5fr 1fr;
+            grid-template-rows: 1fr 2.5fr 1fr;
+            width: 96vw;
+            height: 90vh;    /* Safe height */
             gap: 2vw;
         }
 
@@ -48,22 +47,23 @@
             align-self: start;
         }
 
+        /* Font sizes now use vh (height) instead of vw (width) */
         .open-top,
         .open-bottom {
-            font-size: 13vw;       /* Slightly smaller for vertical safety */
+            font-size: 12vh;     /* Scales with height, not width */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
-            text-shadow: 0 0 3vw #00ff00, 0 0 6vw #00ff00, 0 0 9vw #00ff00, 0 0 12vw #00ff00, 0 0 15vw #00ff00;
+            text-shadow: 0 0 3vh #00ff00, 0 0 6vh #00ff00, 0 0 9vh #00ff00, 0 0 12vh #00ff00, 0 0 15vh #00ff00;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
         .coffee {
-            font-size: 24vw;       /* Large but safe on ultrawide height */
+            font-size: 20vh;     /* Large but height-based */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
-            text-shadow: 0 0 3vw #ff0000, 0 0 6vw #ff0000, 0 0 9vw #ff0000, 0 0 12vw #ff0000, 0 0 15vw #ff0000;
+            text-shadow: 0 0 3vh #ff0000, 0 0 6vh #ff0000, 0 0 9vh #ff0000, 0 0 12vh #ff0000, 0 0 15vh #ff0000;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
@@ -73,10 +73,10 @@
         }
 
         .corner-cup {
-            font-size: 11vw;
+            font-size: 10vh;
             opacity: 1;
             color: #ffffff;
-            text-shadow: 0 0 2vw #ffaa00, 0 0 4vw #ffaa00;
+            text-shadow: 0 0 2vh #ffaa00, 0 0 4vh #ffaa00;
             justify-self: center;
             align-self: center;
         }
