@@ -26,9 +26,9 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 2.5fr 1fr;  /* Increased middle row to give COFFEE more space */
             width: 94vw;
-            height: 88vh;  /* Safe height to avoid cutoff */
+            height: 88vh;
             gap: 2vw;
         }
 
@@ -52,7 +52,7 @@
             align-self: start;
         }
 
-        /* Text styling */
+        /* Text styling – COFFEE much larger to dominate the center */
         .open-top,
         .open-bottom {
             font-size: 14vw;
@@ -69,10 +69,10 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 40vw;
+            font-size: 28vw;  /* Significantly increased to take more of the center */
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: normal;  /* Changed to normal as requested */
+            letter-spacing: normal;
             text-shadow:
                 0 0 3vw #ff0000,
                 0 0 6vw #ff0000,
@@ -87,7 +87,7 @@
             50% { opacity: 0.7; }
         }
 
-        /* Coffee cups – moved farther toward corners, no steam blocks */
+        /* Corner cups – pushed farther toward corners */
         .corner-cup {
             font-size: 12vw;
             opacity: 1;
@@ -98,11 +98,10 @@
             justify-self: center;
             align-self: center;
         }
-        /* Push cups closer to true corners while staying in their grid cell */
-        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 5vw; margin-top: 5vh; }
-        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 5vw; margin-top: 5vh; }
-        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 5vw; margin-bottom: 5vh; }
-        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 5vw; margin-bottom: 5vh; }
+        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 6vw; margin-top: 6vh; }
+        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 6vw; margin-top: 6vh; }
+        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 6vw; margin-bottom: 6vh; }
+        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 6vw; margin-bottom: 6vh; }
 
         .top-left-cup     { grid-column: 1; grid-row: 1; }
         .top-right-cup    { grid-column: 3; grid-row: 1; }
@@ -112,13 +111,11 @@
 </head>
 <body>
     <div class="grid-container">
-        <!-- Coffee cups (no steam blocks) -->
         <div class="corner-cup top-left-cup">☕</div>
         <div class="corner-cup top-right-cup">☕</div>
         <div class="corner-cup bottom-left-cup">☕</div>
         <div class="corner-cup bottom-right-cup">☕</div>
 
-        <!-- Main text -->
         <div class="open-top">Open</div>
         <div class="coffee">Coffee</div>
         <div class="open-bottom">Open</div>
