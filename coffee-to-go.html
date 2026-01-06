@@ -21,11 +21,11 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;  /* Wider center for bigger COFFEE */
-            grid-template-rows: 1fr 3fr 1fr;      /* Taller middle row */
-            width: 98vw;                          /* Use almost full width */
-            height: 95vh;                         /* Use more height safely */
-            gap: 1vw;                             /* Smaller gap to bring things closer */
+            grid-template-columns: 1fr 3fr 1fr;   /* Wider center */
+            grid-template-rows: 1fr 3fr 1fr;       /* Taller middle row */
+            width: 100vw;                          /* Full width */
+            height: 100vh;                         /* Full height */
+            gap: 0;                                /* No gap – elements touch edges */
         }
 
         .open-top {
@@ -47,10 +47,10 @@
             align-self: start;
         }
 
-        /* Larger fonts to fill the space better */
+        /* Very large fonts to fill the screen aggressively */
         .open-top,
         .open-bottom {
-            font-size: 16vh;      /* Bigger, height-based */
+            font-size: 18vh;       /* Huge – fills top/bottom rows */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -59,7 +59,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 28vh;      /* Much larger to dominate center */
+            font-size: 32vh;       /* Massive – dominates center */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
@@ -72,19 +72,19 @@
             50% { opacity: 0.7; }
         }
 
+        /* Large corner cups pushed right to the edges */
         .corner-cup {
-            font-size: 14vh;      /* Larger cups */
+            font-size: 16vh;
             opacity: 1;
             color: #ffffff;
             text-shadow: 0 0 2vh #ffaa00, 0 0 4vh #ffaa00;
             justify-self: center;
             align-self: center;
         }
-        /* Push cups closer to corners */
-        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 4vw; margin-top: 4vh; }
-        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 4vw; margin-top: 4vh; }
-        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 4vw; margin-bottom: 4vh; }
-        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 4vw; margin-bottom: 4vh; }
+        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 2vw; margin-top: 2vh; }
+        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 2vw; margin-top: 2vh; }
+        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 2vw; margin-bottom: 2vh; }
+        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 2vw; margin-bottom: 2vh; }
 
         .top-left-cup     { grid-column: 1; grid-row: 1; }
         .top-right-cup    { grid-column: 3; grid-row: 1; }
