@@ -22,7 +22,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 4fr 1fr;   /* Wider center column for COFFEE */
-            grid-template-rows: 1fr 4fr 1fr;       /* Much taller middle row */
+            grid-template-rows: 1fr 5fr 1fr;       /* Much taller middle row */
             width: 98vw;
             height: 96vh;                          /* Use almost full screen height safely */
             gap: 1vw;
@@ -50,7 +50,7 @@
         /* Text styling – COFFEE maximized */
         .open-top,
         .open-bottom {
-            font-size: 12vh;      /* Smaller to fit in reduced top/bottom rows */
+            font-size: 24vh;      /* Smaller to fit in reduced top/bottom rows */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -59,7 +59,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 40vh;      /* Absolutely massive – fills the large middle row */
+            font-size: 45vh;      /* Absolutely massive – fills the large middle row */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
@@ -73,17 +73,17 @@
         }
 
         .corner-cup {
-            font-size: 10vh;
+            font-size: 16vh;
             opacity: 1;
             color: #ffffff;
             text-shadow: 0 0 2vh #ffaa00, 0 0 4vh #ffaa00;
             justify-self: center;
             align-self: center;
         }
-        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 4vw; margin-top: 4vh; }
-        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 4vw; margin-top: 4vh; }
-        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 4vw; margin-bottom: 4vh; }
-        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 4vw; margin-bottom: 4vh; }
+        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 6vw; margin-top: 6vh; }
+        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 6vw; margin-top: 6vh; }
+        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 6vw; margin-bottom: 6vh; }
+        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 6vw; margin-bottom: 6vh; }
 
         .top-left-cup     { grid-column: 1; grid-row: 1; }
         .top-right-cup    { grid-column: 3; grid-row: 1; }
