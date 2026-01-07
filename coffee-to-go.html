@@ -21,53 +21,62 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;   /* Wide center column */
-            grid-template-rows: 1fr 2fr 1fr;       /* Controlled middle row height */
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr 3fr 1fr;
             width: 98vw;
-            height: 98vh;                          /* Safe height to avoid cutoff */
+            height: 98vh;
             gap: 1vw;
+        }
+
+        /* All items now stretch to fill their entire cell */
+        .open-top,
+        .coffee,
+        .open-bottom,
+        .corner-cup {
+            justify-self: stretch;   /* Fill horizontally */
+            align-self: stretch;     /* Fill vertically */
+            display: flex;           /* Enable inner centering if needed */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .open-top {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
-            justify-self: center;
-            align-self: end;
         }
-
-        /* COFFEE spans all 3 columns but stays in middle row */
         .coffee {
-            grid-column: 1 / 4;        /* Full width across all columns */
-            grid-row: 2 / 3;           /* Stays in middle row only */
-            justify-self: center;
-            align-self: center;
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
         }
-
         .open-bottom {
             grid-column: 2 / 3;
             grid-row: 3 / 4;
-            justify-self: center;
-            align-self: start;
         }
 
+        /* Corner cups */
+        .top-left-cup     { grid-column: 1; grid-row: 1; }
+        .top-right-cup    { grid-column: 3; grid-row: 1; }
+        .bottom-left-cup  { grid-column: 1; grid-row: 3; }
+        .bottom-right-cup { grid-column: 3; grid-row: 3; }
+
+        /* Text styling */
         .open-top,
         .open-bottom {
-            font-size: 22vh;
+            font-size: 16vh;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
             text-shadow: 0 0 3vh #00ff00, 0 0 6vh #00ff00, 0 0 9vh #00ff00, 0 0 12vh #00ff00, 0 0 15vh #00ff00;
             animation: neon-flicker 2s infinite alternate;
-            white-space: nowrap;
         }
         .coffee {
-            font-size: 32vh;           /* Large but height-controlled (vh) */
+            font-size: 28vh;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
             text-shadow: 0 0 3vh #ff0000, 0 0 6vh #ff0000, 0 0 9vh #ff0000, 0 0 12vh #ff0000, 0 0 15vh #ff0000;
             animation: neon-flicker 2s infinite alternate;
-            white-space: nowrap;
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
@@ -76,21 +85,9 @@
 
         .corner-cup {
             font-size: 16vh;
-            opacity: 1;
             color: #ffffff;
             text-shadow: 0 0 2vh #ffaa00, 0 0 4vh #ffaa00;
-            justify-self: center;
-            align-self: center;
         }
-        .top-left-cup     { justify-self: center;  align-self: center;  margin-left: 4vw; margin-top: 4vh; }
-        .top-right-cup    { justify-self: center;    align-self: center;  margin-right: 4vw; margin-top: 4vh; }
-        .bottom-left-cup  { justify-self: center;  align-self: center;    margin-left: 4vw; margin-bottom: 4vh; }
-        .bottom-right-cup { justify-self: center;    align-self: center;    margin-right: 4vw; margin-bottom: 4vh; }
-
-        .top-left-cup     { grid-column: 1; grid-row: 1; }
-        .top-right-cup    { grid-column: 3; grid-row: 1; }
-        .bottom-left-cup  { grid-column: 1; grid-row: 3; }
-        .bottom-right-cup { grid-column: 3; grid-row: 3; }
     </style>
 </head>
 <body>
