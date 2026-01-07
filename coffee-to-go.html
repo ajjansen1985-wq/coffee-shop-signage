@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Font: Bangers -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <title>The Brown Mug - OPEN</title>
     <style>
@@ -23,11 +22,11 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
-            /* Row heights in percentages of container height */
-            grid-template-rows: 15% 70% 15%;   
+            /* More aggressive row distribution for bigger middle */
+            grid-template-rows: 15% 70% 15%;
             width: 98vw;
-            height: 96vh;                     
-            gap: 1vw;
+            height: 98vh;   /* Use even more height */
+            gap: 0.5vw;     /* Minimal gap */
         }
 
         .open-top {
@@ -37,7 +36,7 @@
             align-self: center;
         }
         .coffee {
-            grid-column: 1 / 4;   
+            grid-column: 2 / 3;
             grid-row: 2 / 3;
             justify-self: center;
             align-self: center;
@@ -49,10 +48,10 @@
             align-self: center;
         }
 
-        /* Font sizes in % — relative to the height of their parent grid row */
+        /* Bigger percentage fonts to fill cells more aggressively */
         .open-top,
         .open-bottom {
-            font-size: 70%;       /* 70% of the top/bottom row height */
+            font-size: 85%;       /* Was 70% — now fills top/bottom rows more */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
@@ -61,7 +60,7 @@
             white-space: nowrap;
         }
         .coffee {
-            font-size: 85%;       /* 85% of the large middle row height → huge but contained */
+            font-size: 95%;       /* Was 85% — now almost completely fills middle row */
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
@@ -74,19 +73,18 @@
             50% { opacity: 0.7; }
         }
 
-        /* Corner cups – also scaled relative to their cell */
         .corner-cup {
-            font-size: 60%;       /* 60% of their corner cell height */
+            font-size: 80%;       /* Larger cups in corners */
             opacity: 1;
             color: #ffffff;
             text-shadow: 0 0 2vh #ffaa00, 0 0 4vh #ffaa00;
             justify-self: center;
             align-self: center;
         }
-        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 4vw; margin-top: 4vh; }
-        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 4vw; margin-top: 4vh; }
-        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 4vw; margin-bottom: 4vh; }
-        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 4vw; margin-bottom: 4vh; }
+        .top-left-cup     { justify-self: start;  align-self: start;  margin-left: 3vw; margin-top: 3vh; }
+        .top-right-cup    { justify-self: end;    align-self: start;  margin-right: 3vw; margin-top: 3vh; }
+        .bottom-left-cup  { justify-self: start;  align-self: end;    margin-left: 3vw; margin-bottom: 3vh; }
+        .bottom-right-cup { justify-self: end;    align-self: end;    margin-right: 3vw; margin-bottom: 3vh; }
 
         .top-left-cup     { grid-column: 1; grid-row: 1; }
         .top-right-cup    { grid-column: 3; grid-row: 1; }
