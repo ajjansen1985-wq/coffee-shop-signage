@@ -56,7 +56,22 @@
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5vw;
-            text-shadow: 0 0 4vh #00ff00, 0 0 8vh #00ff00, 0 0 12vh #00ff00, 0 0 16vh #00ff00, 0 0 20vh #00ff00;
+            text-shadow: 
+                /* Black outline (8 layers for smooth, solid look) */
+                -2px -2px 0 #000000,
+                2px -2px 0 #000000,
+                -2px 2px 0 #000000,
+                2px 2px 0 #000000,
+                -2px 0 0 #000000,
+                2px 0 0 #000000,
+                0 -2px 0 #000000,
+                0 2px 0 #000000,
+                /* Original neon glow */
+                0 0 3vh #00ff00,
+                0 0 6vh #00ff00,
+                0 0 9vh #00ff00,
+                0 0 12vh #00ff00,
+                0 0 15vh #00ff00;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
@@ -65,7 +80,21 @@
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: normal;
-            text-shadow: 0 0 4vh #ff0000, 0 0 8vh #ff0000, 0 0 12vh #ff0000, 0 0 16vh #ff0000, 0 0 20vh #ff0000;
+            text-shadow: 
+                text-shadow:
+                -2px -2px 0 #000000,
+                2px -2px 0 #000000,
+                -2px 2px 0 #000000,
+                2px 2px 0 #000000,
+                -2px 0 0 #000000,
+                2px 0 0 #000000,
+                0 -2px 0 #000000,
+                0 2px 0 #000000,
+                0 0 3vh #ff0000,
+                0 0 6vh #ff0000,
+                0 0 9vh #ff0000,
+                0 0 12vh #ff0000,
+                0 0 15vh #ff0000;
             animation: neon-flicker 2s infinite alternate;
             white-space: nowrap;
         }
