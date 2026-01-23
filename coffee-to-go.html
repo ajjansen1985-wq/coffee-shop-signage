@@ -47,8 +47,7 @@
             margin-top: -12.5vh;
         }
         /* Text styling */
-        .open-top,
-        .open-bottom {
+        .open-top,{
             font-size: 20vw;
             color: #ffffff;
             text-transform: uppercase;
@@ -105,6 +104,35 @@
                 0 0 15vh #ff007f;
             animation: neon-flicker 1s infinite alternate;
             white-space: nowrap;
+        .open-bottom {
+            font-size: 20vw;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5vw;
+            text-shadow: 
+                /* Thicker black outline — 6px spread for bold look */
+                -6px -6px 0 #000000,
+                6px -6px 0 #000000,
+                -6px 6px 0 #000000,
+                6px 6px 0 #000000,
+                -6px 0 0 #000000,
+                6px 0 0 #000000,
+                0 -6px 0 #000000,
+                0 6px 0 #000000,
+                /* Optional extra inner fill for even bolder outline */
+                -4px -4px 0 #000000,
+                4px -4px 0 #000000,
+                -4px 4px 0 #000000,
+                4px 4px 0 #000000,
+                /* Original neon glow */
+                0 0 3vh #00ff00,
+                0 0 6vh #00ff00,
+                0 0 9vh #00ff00,
+                0 0 12vh #00ff00,
+                0 0 15vh #00ff00;
+            animation: neon-flicker 1s infinite alternate;
+            white-space: nowrap;
+        }
         }
         @keyframes neon-flicker {
             0%, 100% { opacity: 1; }
